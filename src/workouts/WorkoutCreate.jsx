@@ -10,14 +10,14 @@ const WorkoutCreate = (props)=>{
         e.preventDefault();
         fetch('http://localhost:3000/log', {
             method: 'POST',
-            body: JSON.stringify({data: {description: description, definition: definition, result: result}}),
+            body: JSON.stringify({description: description, definition: definition, result: result}),
             headers: new Headers({
                 'Content-Type':'application/json',
                 'Authorization': props.token
             })
         }).then((res)=>res.json())
-        .then((data)=>{
-            console.log(data);
+        .then(()=>{
+            console.log();
             setDescription('');
             setDefinition('');
             setResult('');
